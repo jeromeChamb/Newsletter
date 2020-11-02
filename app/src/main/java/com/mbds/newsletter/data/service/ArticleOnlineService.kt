@@ -8,7 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ArticleOnlineService(override val article: List<Article>) : ArticleService {
+class ArticleOnlineService : ArticleService {
     private val service: RetrofitApiService
 
     init {

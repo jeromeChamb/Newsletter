@@ -45,4 +45,6 @@ class ListArticlesFragment : Fragment() {
         val adapter = ListArticleAdapter(articles)
         recyclerView.adapter = adapter
     }
+
+
 }
