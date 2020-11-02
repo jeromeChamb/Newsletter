@@ -13,6 +13,7 @@ class ArticleRepository {
 
     fun getArticles(): List<Article> = apiService.article
 
+
     companion object {
         private var instance: ArticleRepository? = null
         fun getInstance(): ArticleRepository {
