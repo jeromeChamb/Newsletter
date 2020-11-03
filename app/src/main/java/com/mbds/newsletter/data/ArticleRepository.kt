@@ -1,17 +1,16 @@
 package com.mbds.newsletter.data
 
-import com.mbds.newsletter.data.service.ArticleService
-import com.mbds.newsletter.data.service.DummyArticleApiService
+import com.mbds.newsletter.data.service.ArticleOnlineService
 import com.mbds.newsletter.models.Article
 
 class ArticleRepository {
-    private val apiService: ArticleService
+    private val apiService: ArticleOnlineService
 
     init {
-        apiService = DummyArticleApiService()
+        apiService = ArticleOnlineService()
     }
 
-    fun getArticles(): List<Article> = apiService.article
+    fun getArticles(): List<Article> = apiService.getArticles()
 
 
     companion object {
