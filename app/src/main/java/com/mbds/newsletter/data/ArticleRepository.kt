@@ -1,14 +1,18 @@
 package com.mbds.newsletter.data
 
 import com.mbds.newsletter.data.service.ArticleService
-import com.mbds.newsletter.data.service.RetrofitApiService
+import com.mbds.newsletter.data.service.DummyArticleApiService
 import com.mbds.newsletter.models.Article
-import retrofit2.Call
 
 class ArticleRepository {
+    private val apiService: ArticleService
 
+    init {
+        apiService = DummyArticleApiService()
+    }
 
-    fun getArticles() {}
+    fun getArticles(): List<Article> = apiService.article
+
 
     companion object {
         private var instance: ArticleRepository? = null
