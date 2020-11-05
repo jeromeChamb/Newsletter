@@ -41,17 +41,15 @@ class ListArticlesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val articles = ArticleRepository.getInstance().getArticles()
-        val adapter = ListArticleAdapter(articles)
-        recyclerView.adapter = adapter
+        getArticles()
     }
-
     /**
      * Récupère la liste des articles dans un thread secondaire
      */
     private fun getArticles() {
         lifecycleScope.launch(Dispatchers.IO) {
             val articles = ArticleRepository.getInstance().getArticles()
+            bindData(articles)
         }
     }
 
@@ -64,8 +62,8 @@ class ListArticlesFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
+            val adapter = ListArticleAdapter(articles)
+            recyclerView.adapter = adapter
         }
     }
-
-
 }

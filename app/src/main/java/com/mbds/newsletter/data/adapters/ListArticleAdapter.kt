@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Article
 
@@ -24,6 +26,15 @@ class ListArticleAdapter (
             // Display Neighbour Name
             holder.mArticleName.text = article.name
             holder.mArticleDescription.text = article.description
+            val context = holder.itemView.context
+            // Display Neighbour Avatar
+            Glide.with(context)
+                .load(article.urlToImage)
+                .apply(RequestOptions.circleCropTransform())
+                .placeholder(R.drawable.ic_baseline_image_24)
+                .error(R.drawable.ic_baseline_image_24)
+                .skipMemoryCache(false)
+                .into(holder.mArticleAvatar)
         }
 
         override fun getItemCount(): Int {
