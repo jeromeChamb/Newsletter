@@ -7,6 +7,7 @@ import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Query
 
 class ArticleOnlineService : ArticleService {
     private val service: RetrofitApiService
@@ -65,12 +66,12 @@ class ArticleOnlineService : ArticleService {
     }
 
     override fun getArticles(): List<Article> {
-        return service.list().execute().body() ?: listOf()
+        return service.list("bitcoin").execute().body() ?: listOf()
     }
 
     companion object {
         private const val apiKey = "ad73e60d063446088a5ae051a33b5ae3"
-        private const val apiUrl = "https://newsapi.org/v2/"
+        private const val apiUrl = "https://newsapi.org/"
     }
 
 }
