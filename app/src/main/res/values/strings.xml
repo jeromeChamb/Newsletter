@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Newsletter</string>
-    <string name="list_articles">Articles</string>
+    <string name="list_articles">Liste des articles</string>
+    <string name="article_details">Article</string>
 </resources>
