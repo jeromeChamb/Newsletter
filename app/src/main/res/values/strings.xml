@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">Newsletter</string>
-    <string name="list_articles">Articles</string>
     <string name="date">Date</string>
     <string name="author">Auteur</string>
     <string name="description">Description</string>
     <string name="title">Titre</string>
+    <string name="list_articles">Liste des articles</string>
+    <string name="article_details">Article</string>
 </resources>
