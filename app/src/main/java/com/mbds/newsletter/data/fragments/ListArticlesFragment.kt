@@ -41,7 +41,9 @@ class ListArticlesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getArticles()
+        val articles = ArticleRepository.getInstance().getArticles()
+        val adapter = ListArticleAdapter(articles)
+        recyclerView.adapter = adapter
     }
     /**
      * Récupère la liste des articles dans un thread secondaire

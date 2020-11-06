@@ -1,10 +1,10 @@
 package com.mbds.newsletter.models
 
-import androidx.annotation.StringRes
+import java.util.*
+
 
 data class Article(
-    val id: Int,
-    val name: String,
+    val source: Objects,
     val author:String,
     val title: String,
     val description:String,

@@ -24,7 +24,7 @@ class ListArticleAdapter (
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val article: Article = mArticles[position]
             // Display Neighbour Name
-            holder.mArticleName.text = article.name
+            holder.mArticleName.text = article.title
             holder.mArticleDescription.text = article.description
 //            val context = holder.itemView.context
 //            // Display Neighbour Avatar
