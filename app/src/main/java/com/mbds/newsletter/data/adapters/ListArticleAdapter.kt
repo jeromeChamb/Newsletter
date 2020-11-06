@@ -28,7 +28,7 @@ class ListArticleAdapter (
             holder.mArticleName.text = article.title
             holder.mArticleDescription.text = article.description
             val context = holder.itemView.context
-            // Display Neighbour Avatar
+            // Display  Avatar
             Glide.with(context)
                 .load(article.urlToImage)
                 .apply(RequestOptions.circleCropTransform())
