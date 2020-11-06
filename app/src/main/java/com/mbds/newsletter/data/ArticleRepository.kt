@@ -2,6 +2,7 @@ package com.mbds.newsletter.data
 
 import com.mbds.newsletter.data.service.ArticleOnlineService
 import com.mbds.newsletter.models.Article
+import com.mbds.newsletter.models.ArticleReponse
 
 class ArticleRepository {
     private val apiService: ArticleOnlineService
@@ -10,7 +11,7 @@ class ArticleRepository {
         apiService = ArticleOnlineService()
     }
 
-    fun getArticles(): List<Article> = apiService.getArticles()
+    fun getArticles(): ArticleReponse = apiService.getArticles()
 
 
     companion object {

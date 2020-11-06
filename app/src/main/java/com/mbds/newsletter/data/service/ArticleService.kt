@@ -1,7 +1,7 @@
 package com.mbds.newsletter.data.service
 
-import com.mbds.newsletter.models.Article
+import com.mbds.newsletter.models.ArticleReponse
 
 interface ArticleService {
-    fun getArticles(): List<Article>
+    fun getArticles(): ArticleReponse
 }

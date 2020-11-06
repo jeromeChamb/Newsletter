@@ -1,6 +1,7 @@
 package com.mbds.newsletter.data.service
 
 import com.mbds.newsletter.models.Article
+import com.mbds.newsletter.models.ArticleReponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -65,8 +66,9 @@ class ArticleOnlineService : ArticleService {
         })
     }
 
-    override fun getArticles(): List<Article> {
-        return service.list("bitcoin").execute().body() ?: listOf()
+    override fun getArticles(): ArticleReponse {
+        val response = service.list("bitcoin").execute().body()
+        return response!!
     }
 
     companion object {
