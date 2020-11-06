@@ -25,8 +25,10 @@ class ListArticleAdapter (
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val article: Article = mArticles.articles[position]
             // Display Neighbour Name
-            holder.mArticleName.text = article.title
+            holder.mArticleTitle.text = article.title
             holder.mArticleDescription.text = article.description
+            holder.mArticleName.text    = article.author
+            holder.mArticleDate.text = article.publishedAt
             val context = holder.itemView.context
             // Display  Avatar
             Glide.with(context)
@@ -46,12 +48,16 @@ class ListArticleAdapter (
             RecyclerView.ViewHolder(view) {
             val mArticleAvatar: ImageView
             val mArticleName: TextView
+            val mArticleTitle: TextView
+            val mArticleDate: TextView
             val mArticleDescription: TextView
 
             init {
                 // Enable click on item
                 mArticleAvatar = view.findViewById(R.id.item_list_avatar)
-                mArticleName = view.findViewById(R.id.item_list_name)
+                mArticleName = view.findViewById(R.id.item_list_author)
+                mArticleTitle = view.findViewById(R.id.item_list_name)
+                mArticleDate = view.findViewById(R.id.item_list_date)
                 mArticleDescription = view.findViewById(R.id.item_list_desc)
             }
         }
