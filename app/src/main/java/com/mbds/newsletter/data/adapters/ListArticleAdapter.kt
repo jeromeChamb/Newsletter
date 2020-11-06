@@ -10,11 +10,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Article
+import com.mbds.newsletter.models.ArticleReponse
 
 class ListArticleAdapter (
-    items: List<Article>
+    items: ArticleReponse
     ) : RecyclerView.Adapter<ListArticleAdapter.ViewHolder>() {
-        private val mArticles: List<Article> = items
+        private val mArticles: ArticleReponse = items
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view: View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.articles_item, parent, false)
@@ -22,7 +23,7 @@ class ListArticleAdapter (
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            val article: Article = mArticles[position]
+            val article: Article = mArticles.articles[position]
             // Display Neighbour Name
             holder.mArticleName.text = article.title
             holder.mArticleDescription.text = article.description
@@ -38,7 +39,7 @@ class ListArticleAdapter (
         }
 
         override fun getItemCount(): Int {
-            return mArticles.size
+            return mArticles.articles.size
         }
 
         class ViewHolder(view: View) :

@@ -13,6 +13,7 @@ import com.mbds.newsletter.R
 import com.mbds.newsletter.data.ArticleRepository
 import com.mbds.newsletter.data.adapters.ListArticleAdapter
 import com.mbds.newsletter.models.Article
+import com.mbds.newsletter.models.ArticleReponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -58,7 +59,7 @@ class ListArticlesFragment : Fragment() {
      * Cette action doit s'effectuer sur le thread principale
      * Car on ne peut mas modifier les éléments de vue dans un thread secondaire
      */
-    private fun bindData(articles: List<Article>) {
+    private fun bindData(articles: ArticleReponse) {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
