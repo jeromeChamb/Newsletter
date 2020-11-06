@@ -3,6 +3,7 @@ package com.mbds.newsletter.data.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -29,6 +30,17 @@ class ListArticleAdapter (
             holder.mArticleDescription.text = article.description
             holder.mArticleName.text    = article.author
             holder.mArticleDate.text = article.publishedAt
+            holder.mArticleFavorite.setOnClickListener {
+                if (article.favorite == 0 ){
+                    holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
+                    article.favorite = 1
+                }
+                else
+                {
+                    article.favorite = 0
+                    holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                }
+            }
             val context = holder.itemView.context
             // Display  Avatar
             Glide.with(context)
@@ -51,6 +63,7 @@ class ListArticleAdapter (
             val mArticleTitle: TextView
             val mArticleDate: TextView
             val mArticleDescription: TextView
+            val mArticleFavorite: ImageButton
 
             init {
                 // Enable click on item
@@ -59,6 +72,7 @@ class ListArticleAdapter (
                 mArticleTitle = view.findViewById(R.id.item_list_name)
                 mArticleDate = view.findViewById(R.id.item_list_date)
                 mArticleDescription = view.findViewById(R.id.item_list_desc)
+                mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
             }
         }
 }
