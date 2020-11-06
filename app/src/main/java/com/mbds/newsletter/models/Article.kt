@@ -1,10 +1,8 @@
 package com.mbds.newsletter.models
 
-import java.util.*
-
 
 data class Article(
-    val source: Objects,
+    val source : Source,
     val author:String,
     val title: String,
     val description:String,
