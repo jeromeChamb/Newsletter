@@ -31,7 +31,7 @@
         android:textColor="@color/blue"
         app:layout_constraintStart_toEndOf="@+id/item_list_avatar"
         app:layout_constraintBottom_toTopOf="@+id/item_list_desc"
-        tools:text="Un Article" />
+        tools:text="@string/title" />
 
     <TextView
         android:id="@+id/item_list_desc"
@@ -43,7 +43,7 @@
         android:maxLines="3"
         app:layout_constraintTop_toTopOf="@+id/item_list_avatar"
         app:layout_constraintStart_toEndOf="@+id/item_list_avatar"
-        tools:text="Une Description " />
+        tools:text="@string/description" />
 
     <TextView
         android:id="@+id/item_list_author"
@@ -57,7 +57,7 @@
         android:layout_marginBottom="10dp"
         app:layout_constraintStart_toEndOf="@+id/item_list_avatar"
         app:layout_constraintTop_toBottomOf="@+id/item_list_desc"
-        tools:text="Auteur" />
+        tools:text="@string/author" />
 
     <TextView
         android:id="@+id/item_list_date"
@@ -71,7 +71,7 @@
         android:layout_marginBottom="10dp"
         app:layout_constraintStart_toEndOf="@+id/item_list_author"
         app:layout_constraintTop_toBottomOf="@+id/item_list_desc"
-        tools:text="Date" />
+        tools:text="@string/date" />
 
     <ImageButton
         android:id="@+id/item_list_favorite_button"
