@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,9 +11,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Article
 import com.mbds.newsletter.models.ArticleReponse
+import kotlinx.coroutines.CoroutineScope
 
-class ListArticleAdapter (
-    items: ArticleReponse
+class ListArticleAdapter(
+    items: ArticleReponse, val handler: ListArticlesHandler
     ) : RecyclerView.Adapter<ListArticleAdapter.ViewHolder>() {
         private val mArticles: ArticleReponse = items
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,6 +41,9 @@ class ListArticleAdapter (
                     holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 }
             }
+            holder.mArticleAvatar.setOnClickListener {
+                handler.showArticle(article)
+            }
             val context = holder.itemView.context
             // Display  Avatar
             Glide.with(context)
@@ -58,7 +61,7 @@ class ListArticleAdapter (
 
         class ViewHolder(view: View) :
             RecyclerView.ViewHolder(view) {
-            val mArticleAvatar: ImageView
+            val mArticleAvatar: ImageButton
             val mArticleName: TextView
             val mArticleTitle: TextView
             val mArticleDate: TextView

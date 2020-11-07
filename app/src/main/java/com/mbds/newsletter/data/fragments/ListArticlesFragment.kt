@@ -11,13 +11,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.ArticleRepository
+import com.mbds.newsletter.data.adapters.ArticleDetailsAdapter
 import com.mbds.newsletter.data.adapters.ListArticleAdapter
+import com.mbds.newsletter.data.adapters.ListArticlesHandler
 import com.mbds.newsletter.models.Article
 import com.mbds.newsletter.models.ArticleReponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ListArticlesFragment : Fragment() {
+class ListArticlesFragment : Fragment(), ListArticlesHandler {
     private lateinit var recyclerView: RecyclerView
 
     /**
@@ -63,8 +65,13 @@ class ListArticlesFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
-            val adapter = ListArticleAdapter(articles)
+            val adapter = ListArticleAdapter(articles,this@ListArticlesFragment)
             recyclerView.adapter = adapter
         }
+    }
+
+    override fun showArticle(article: Article) {
+        val adapter = ArticleDetailsAdapter(article)
+        recyclerView.adapter = adapter
     }
 }
