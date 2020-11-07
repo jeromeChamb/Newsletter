@@ -58,7 +58,7 @@ class ListArticleAdapter (
 
         class ViewHolder(view: View) :
             RecyclerView.ViewHolder(view) {
-            val mArticleAvatar: ImageButton
+            val mArticleAvatar: ImageView
             val mArticleName: TextView
             val mArticleTitle: TextView
             val mArticleDate: TextView
