@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -30,6 +31,12 @@ class ListArticleAdapter(
             holder.mArticleDescription.text = article.description
             holder.mArticleName.text    = article.author
             holder.mArticleDate.text = article.publishedAt
+            holder.mArticleTitle.setOnClickListener {
+                handler.showArticle(article)
+            }
+            holder.mArticleDescription.setOnClickListener {
+                handler.showArticle(article)
+            }
             holder.mArticleFavorite.setOnClickListener {
                 if (article.favorite == 0 ){
                     holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
@@ -60,7 +67,7 @@ class ListArticleAdapter(
 
         class ViewHolder(view: View) :
             RecyclerView.ViewHolder(view) {
-            val mArticleAvatar: ImageButton
+            val mArticleAvatar: ImageView
             val mArticleName: TextView
             val mArticleTitle: TextView
             val mArticleDate: TextView
