@@ -64,7 +64,7 @@ class ArticleDetailsAdapter (
         val mArticleDate: TextView
         val mArticleDescription: TextView
         val mArticleRetour : ImageButton
-        val mArticleEditeur : Button
+        val mArticleEditeur : TextView
 
         init {
             // Enable click on item
