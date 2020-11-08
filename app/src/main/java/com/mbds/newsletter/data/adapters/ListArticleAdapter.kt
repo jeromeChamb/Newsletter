@@ -31,6 +31,15 @@ class ListArticleAdapter(
             holder.mArticleDescription.text = article.description
             holder.mArticleName.text    = article.author
             holder.mArticleDate.text = article.publishedAt
+            //init favorite button
+            // Init favorite button
+            if(article.favorite == 0){
+                holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+            }else{
+                holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
+            }
+
+
             holder.mArticleTitle.setOnClickListener {
                 handler.showArticle(article)
             }

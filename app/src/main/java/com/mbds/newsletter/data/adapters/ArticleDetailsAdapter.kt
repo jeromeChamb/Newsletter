@@ -29,11 +29,29 @@ class ArticleDetailsAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        // Display Neighbour Name
         holder.mArticleTitle.text = article.title
         holder.mArticleDescription.text = article.description
         holder.mArticleName.text    = article.author
         holder.mArticleDate.text = article.publishedAt
+
+
+       // Init favorite button
+        if(article.favorite == 0){
+            holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+        }else{
+            holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
+        }
+
+        //Button on Click
+        holder.mArticleFavorite.setOnClickListener {
+            if(article.favorite == 0){
+                holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
+                article.favorite = 1
+            }else{
+                holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                article.favorite = 0
+            }
+        }
         holder.mArticleRetour.setOnClickListener {
             handler.back()
         }
@@ -65,6 +83,7 @@ class ArticleDetailsAdapter (
         val mArticleDescription: TextView
         val mArticleRetour : ImageButton
         val mArticleEditeur : TextView
+        val mArticleFavorite : ImageButton
 
         init {
             // Enable click on item
@@ -75,6 +94,7 @@ class ArticleDetailsAdapter (
             mArticleDescription = view.findViewById(R.id.item_list_desc)
             mArticleRetour = view.findViewById(R.id.item_back)
             mArticleEditeur = view.findViewById(R.id.item_list_editeur)
+            mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
         }
     }
 }
