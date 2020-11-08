@@ -48,7 +48,7 @@ class ListArticleAdapter(
             // Display  Avatar
             Glide.with(context)
                 .load(article.urlToImage)
-                .apply(RequestOptions.circleCropTransform())
+                .apply(RequestOptions.centerCropTransform())
                 .placeholder(R.drawable.ic_baseline_image_24)
                 .error(R.drawable.ic_baseline_image_24)
                 .skipMemoryCache(false)

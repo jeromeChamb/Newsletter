@@ -13,7 +13,7 @@ import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Article
 
 class ArticleDetailsAdapter (
-    items: Article
+    items: Article, val handler: ListArticlesHandler
 ) : RecyclerView.Adapter<ArticleDetailsAdapter.ViewHolder>() {
     private val article: Article = items
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,7 +29,9 @@ class ArticleDetailsAdapter (
         holder.mArticleDescription.text = article.description
         holder.mArticleName.text    = article.author
         holder.mArticleDate.text = article.publishedAt
-
+        holder.mArticleRetour.setOnClickListener {
+            handler.back()
+        }
         val context = holder.itemView.context
         // Display  Avatar
         Glide.with(context)
@@ -52,6 +54,7 @@ class ArticleDetailsAdapter (
         val mArticleTitle: TextView
         val mArticleDate: TextView
         val mArticleDescription: TextView
+        val mArticleRetour : ImageButton
 
         init {
             // Enable click on item
@@ -60,6 +63,7 @@ class ArticleDetailsAdapter (
             mArticleTitle = view.findViewById(R.id.item_list_name)
             mArticleDate = view.findViewById(R.id.item_list_date)
             mArticleDescription = view.findViewById(R.id.item_list_desc)
+            mArticleRetour = view.findViewById(R.id.item_back)
         }
     }
 }

@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.ArticleRepository
 import com.mbds.newsletter.data.adapters.ArticleDetailsAdapter
@@ -71,7 +72,17 @@ class ListArticlesFragment : Fragment(), ListArticlesHandler {
     }
 
     override fun showArticle(article: Article) {
-        val adapter = ArticleDetailsAdapter(article)
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.article_details)
+        }
+        val adapter = ArticleDetailsAdapter(article,this)
         recyclerView.adapter = adapter
+    }
+
+    override fun back() {
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.list_articles)
+        }
+        getArticles()
     }
 }
