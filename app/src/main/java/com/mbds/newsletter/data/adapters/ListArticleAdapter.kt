@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.mbds.newsletter.R
+import com.mbds.newsletter.data.fragments.HomePageFragment
 import com.mbds.newsletter.models.Article
 import com.mbds.newsletter.models.ArticleReponse
 import kotlinx.coroutines.CoroutineScope
