@@ -1,11 +1,16 @@
 package com.mbds.newsletter.data.adapters
 
+import android.content.Intent
+import android.net.Uri
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -32,6 +37,10 @@ class ArticleDetailsAdapter (
         holder.mArticleRetour.setOnClickListener {
             handler.back()
         }
+        holder.mArticleEditeur.text = article.url
+        holder.mArticleEditeur.setOnClickListener {
+            handler.showPage(article.url)
+        }
         val context = holder.itemView.context
         // Display  Avatar
         Glide.with(context)
@@ -55,6 +64,7 @@ class ArticleDetailsAdapter (
         val mArticleDate: TextView
         val mArticleDescription: TextView
         val mArticleRetour : ImageButton
+        val mArticleEditeur : Button
 
         init {
             // Enable click on item
@@ -64,6 +74,7 @@ class ArticleDetailsAdapter (
             mArticleDate = view.findViewById(R.id.item_list_date)
             mArticleDescription = view.findViewById(R.id.item_list_desc)
             mArticleRetour = view.findViewById(R.id.item_back)
+            mArticleEditeur = view.findViewById(R.id.item_list_editeur)
         }
     }
 }

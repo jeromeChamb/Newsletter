@@ -1,9 +1,12 @@
 package com.mbds.newsletter.data.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -84,5 +87,11 @@ class ListArticlesFragment : Fragment(), ListArticlesHandler {
             it.updateTitle(R.string.list_articles)
         }
         getArticles()
+    }
+
+    override fun showPage(url: String) {
+        val chemin: Uri = Uri.parse(url)
+        val naviguer = Intent(Intent.ACTION_VIEW,chemin)
+        startActivity(naviguer)
     }
 }

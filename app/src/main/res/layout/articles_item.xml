@@ -82,7 +82,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/item_list_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/item_list_desc"
-        app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+        app:srcCompat="@drawable/ic_baseline_favorite_border_24"
+        />
 
 
 
