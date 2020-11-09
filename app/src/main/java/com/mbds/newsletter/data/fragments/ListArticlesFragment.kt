@@ -23,9 +23,9 @@ import com.mbds.newsletter.models.ArticleReponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class ListArticlesFragment : Fragment(), ListArticlesHandler {
+class ListArticlesFragment (subject: String): Fragment(), ListArticlesHandler {
     private lateinit var recyclerView: RecyclerView
-
+    val subject = subject
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
      */
@@ -48,14 +48,14 @@ class ListArticlesFragment : Fragment(), ListArticlesHandler {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getArticles()
+        getArticles(subject)
     }
     /**
      * Récupère la liste des articles dans un thread secondaire
      */
-    private fun getArticles() {
+    private fun getArticles(subject: String) {
         lifecycleScope.launch(Dispatchers.IO) {
-            val articles = ArticleRepository.getInstance().getArticles()
+            val articles = ArticleRepository.getInstance().getArticles(subject)
             bindData(articles)
         }
     }
@@ -86,7 +86,7 @@ class ListArticlesFragment : Fragment(), ListArticlesHandler {
         (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.list_articles)
         }
-        getArticles()
+        getArticles(subject)
     }
 
     override fun showPage(url: String) {

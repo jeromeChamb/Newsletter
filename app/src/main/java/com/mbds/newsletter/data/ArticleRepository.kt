@@ -11,7 +11,7 @@ class ArticleRepository {
         apiService = ArticleOnlineService()
     }
 
-    fun getArticles(): ArticleReponse = apiService.getArticles()
+    fun getArticles(subject :String): ArticleReponse = apiService.getArticles(subject)
 
 
     companion object {

@@ -66,8 +66,8 @@ class ArticleOnlineService : ArticleService {
         })
     }
 
-    override fun getArticles(): ArticleReponse {
-        val response = service.list("bitcoin").execute().body()
+    override fun getArticles(sujet: String): ArticleReponse {
+        val response = service.list(sujet).execute().body()
         return response!!
     }
 
