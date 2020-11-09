@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:text="Derniers Articles"
+                android:text="@string/dernierArticles"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="3dp"
-                android:text="Tous les Articles"
+                android:text="@string/toutArticles"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -56,7 +56,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="24dp"
-                android:text="Par Editeur"
+                android:text="@string/editeur"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -70,7 +70,7 @@
                 <Button
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Editeur 1"
+                    android:text="@string/editeur1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textAllCaps="false"/>
@@ -80,7 +80,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Editeur 2"
+                    android:text="@string/editeur2"
                     android:textAllCaps="false"
                     />
 
@@ -89,7 +89,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Editeur 3"
+                    android:text="@string/editeur3"
                     android:textAllCaps="false"/>
 
             </LinearLayout>
@@ -102,7 +102,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="24dp"
-                android:text="Par Catégorie"
+                android:text="@string/categorie"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -116,7 +116,7 @@
                 <Button
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Cat 1"
+                    android:text="@string/categorie1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textAllCaps="false"/>
@@ -126,7 +126,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Cat 2"
+                    android:text="@string/categorie2"
                     android:textAllCaps="false"
                     />
 
@@ -135,7 +135,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Cat 3"
+                    android:text="@string/categorie3"
                     android:textAllCaps="false"/>
 
             </LinearLayout>
@@ -146,7 +146,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="24dp"
-                android:text="Par Pays"
+                android:text="@string/pays"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -160,7 +160,7 @@
                 <Button
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Pays 1"
+                    android:text="@string/pays1"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textAllCaps="false"/>
@@ -170,7 +170,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Pays 2"
+                    android:text="@string/pays2"
                     android:textAllCaps="false"
                     />
 
@@ -179,7 +179,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Pays 3"
+                    android:text="@string/pays3"
                     android:textAllCaps="false"/>
 
                 <Button
@@ -187,7 +187,7 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="Pays 4"
+                    android:text="@string/pays4"
                     android:textAllCaps="false"/>
 
             </LinearLayout>
@@ -198,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="15dp"
-                android:text="Informations Aditionnelles"
+                android:text="@string/informationsAdd"
                 android:textColor="@color/blue"
                 android:textSize="15dp" />
 
@@ -213,7 +213,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/mybutton"
-                    android:text="A Propos de Nous" />
+                    android:text="@string/aPropos" />
 
             </RelativeLayout>
 

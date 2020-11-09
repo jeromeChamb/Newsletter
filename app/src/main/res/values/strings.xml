@@ -1,10 +1,41 @@
 <resources>
+
     <string name="app_name">Newsletter</string>
+    <string name="list_articles">Liste des articles</string>
+    <string name="article_details">Article</string>
+    <string name="home">Accueil</string>
+
+    <!-- articles_item et articles_details -->
     <string name="date">Date</string>
     <string name="author">Auteur</string>
     <string name="description">Description</string>
     <string name="title">Titre</string>
-    <string name="list_articles">Liste des articles</string>
-    <string name="article_details">Article</string>
-    <string name="home">Accueil</string>
+    <string name="savoir"><u>En savoir plus</u></string>
+
+    <!-- home_page.xml -->
+    <string name="dernierArticles">Derniers Articles</string>
+    <string name="toutArticles">Tous les articles</string>
+    <string name="editeur">Par Editeur</string>
+    <string name="editeur1">Editeur 1</string>
+    <string name="editeur2">Editeur 2</string>
+    <string name="editeur3">Editeur 3</string>
+    <string name="categorie">Par Catégorie</string>
+    <string name="categorie1">Catégorie 1</string>
+    <string name="categorie2">Catégorie 2</string>
+    <string name="categorie3">Catégorie 3</string>
+    <string name="pays">Par Pays</string>
+    <string name="pays1">Pays 1</string>
+    <string name="pays2">Pays 2</string>
+    <string name="pays3">Pays 3</string>
+    <string name="pays4">Pays 4</string>
+    <string name="informationsAdd">Informations Supplémentaires</string>
+    <string name="aPropos">A propos de nous</string>
+
+
+
+
+
+
+
+
 </resources>
