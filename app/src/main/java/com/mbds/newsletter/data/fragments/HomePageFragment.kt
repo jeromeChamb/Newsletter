@@ -33,7 +33,7 @@ class HomePageFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? NavigationListener)?.let {
-            it.showFragmentinFragment(R.id.fragment_list,ListArticlesFragment("actuality"))
+            it.showFragmentinFragment(R.id.fragment_list,ListHomeFragment("actuality"))
             it.updateTitle(R.string.home)
         }
 
