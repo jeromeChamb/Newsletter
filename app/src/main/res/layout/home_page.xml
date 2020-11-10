@@ -67,30 +67,17 @@
                 android:layout_marginBottom="10dp"
                 >
 
-                <Button
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/editeur1"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:textAllCaps="false"/>
+                <FrameLayout
+                    android:id="@+id/fragment_list_editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/editeur2"
-                    android:textAllCaps="false"
-                    />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/editeur3"
-                    android:textAllCaps="false"/>
 
             </LinearLayout>
 
@@ -113,30 +100,17 @@
                 android:layout_marginBottom="10dp"
                 >
 
-                <Button
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/categorie1"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:textAllCaps="false"/>
+                <FrameLayout
+                    android:id="@+id/fragment_list_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/categorie2"
-                    android:textAllCaps="false"
-                    />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/categorie3"
-                    android:textAllCaps="false"/>
 
             </LinearLayout>
 
@@ -157,38 +131,17 @@
                 android:layout_marginBottom="10dp"
                 >
 
-                <Button
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/pays1"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:textAllCaps="false"/>
+                <FrameLayout
+                    android:id="@+id/fragment_list_country"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
 
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/pays2"
-                    android:textAllCaps="false"
-                    />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/pays3"
-                    android:textAllCaps="false"/>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/pays4"
-                    android:textAllCaps="false"/>
 
             </LinearLayout>
 
