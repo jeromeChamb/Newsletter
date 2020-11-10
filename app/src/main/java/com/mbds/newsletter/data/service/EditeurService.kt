@@ -1,5 +1,6 @@
 package com.mbds.newsletter.data.service
 
+import com.mbds.newsletter.models.Editeur
 import com.mbds.newsletter.models.EditeurReponse
 
 interface EditeurService {

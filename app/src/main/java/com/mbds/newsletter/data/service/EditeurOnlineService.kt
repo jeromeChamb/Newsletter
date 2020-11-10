@@ -1,6 +1,7 @@
 package com.mbds.newsletter.data.service
 
 import com.mbds.newsletter.models.ArticleReponse
+import com.mbds.newsletter.models.Editeur
 import com.mbds.newsletter.models.EditeurReponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -10,12 +11,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class EditeurOnlineService : EditeurService {
-    private val service: RetrofitApiService
+    private val service: RetrofitEditeur
 
     init {
         val retrofit = buildClient()
         //Init the api service with retrofit
-        service = retrofit.create(RetrofitApiService::class.java)
+        service = retrofit.create(RetrofitEditeur::class.java)
     }
 
     /**
@@ -71,7 +72,7 @@ class EditeurOnlineService : EditeurService {
     }
 
     override fun getEditeur(): EditeurReponse {
-        val response = service.editeur("?").execute().body()
+        val response = service.editeur().execute().body()
         return response!!
     }
 
