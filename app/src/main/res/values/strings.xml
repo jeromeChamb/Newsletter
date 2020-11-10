@@ -30,12 +30,14 @@
     <string name="pays4">Pays 4</string>
     <string name="informationsAdd">Informations Supplémentaires</string>
     <string name="aPropos">A propos de nous</string>
-
-
-
-
-
-
+    <string name="team">Notre Equipe</string>
+    <string name="jChambord">- Jérome Chambord @jeromeChamb</string>
+    <string name="jLassalle">- Justin Lassalle @fust1</string>
+    <string name="vAzalbert">- Victor Azalbert @zazacito</string>
+    <string name="link_repo_title">Lien Vers le Repository GitHub</string>
+    <string name="link_repo">https://github.com/jeromeChamb/Newsletter</string>
+    <string name="libraries_used_title">Librairies Externes Utilisées</string>
+    <string name="functions_developped_title">Fonctionnalités Développées</string>
 
 
 </resources>
