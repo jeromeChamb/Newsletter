@@ -1,8 +1,6 @@
-package com.mbds.newsletter.data.service
+package com.mbds.newsletter.data
 
-import com.mbds.newsletter.data.ArticleRepository
-import com.mbds.newsletter.models.ArticleReponse
-import com.mbds.newsletter.models.Editeur
+import com.mbds.newsletter.data.service.EditeurOnlineService
 import com.mbds.newsletter.models.EditeurReponse
 
 class EditorRepository {

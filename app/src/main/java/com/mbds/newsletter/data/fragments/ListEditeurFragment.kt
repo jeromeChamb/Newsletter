@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.adapters.ListButtonAdapter
-import com.mbds.newsletter.data.service.EditorRepository
+import com.mbds.newsletter.data.EditorRepository
 import com.mbds.newsletter.models.EditeurReponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

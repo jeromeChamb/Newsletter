@@ -11,12 +11,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class EditeurOnlineService : EditeurService {
-    private val service: RetrofitEditeur
+    private val service: RetrofitApiService
 
     init {
         val retrofit = buildClient()
         //Init the api service with retrofit
-        service = retrofit.create(RetrofitEditeur::class.java)
+        service = retrofit.create(RetrofitApiService::class.java)
     }
 
     /**

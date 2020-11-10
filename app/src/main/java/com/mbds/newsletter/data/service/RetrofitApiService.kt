@@ -13,4 +13,6 @@ interface RetrofitApiService {
     // Elle sera concaténée avec l'url prédéfini dans retrofit
     @GET("/v2/everything")
     fun list(@Query("q") query: String): Call<ArticleReponse>
+    @GET("/v2/sources")
+    fun editeur() : Call<EditeurReponse>
 }
