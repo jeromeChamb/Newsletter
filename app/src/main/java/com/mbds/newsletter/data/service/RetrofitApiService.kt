@@ -15,4 +15,6 @@ interface RetrofitApiService {
     fun list(@Query("q") query: String): Call<ArticleReponse>
     @GET("/v2/sources")
     fun editeur() : Call<EditeurReponse>
+   @GET("/v2/top-headlines")
+   fun source(@Query("sources") query: String): Call<ArticleReponse>
 }
