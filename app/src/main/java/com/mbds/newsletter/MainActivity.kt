@@ -1,11 +1,12 @@
 package com.mbds.newsletter
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.mbds.newsletter.data.fragments.HomePageFragment
-import com.mbds.newsletter.data.fragments.ListArticlesFragment
+
 
 class MainActivity : AppCompatActivity(),
     NavigationListener {
@@ -37,4 +38,10 @@ class MainActivity : AppCompatActivity(),
     override fun updateTitle(title: Int) {
         toolbar.setTitle(title)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
 }
