@@ -17,7 +17,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_scrollFlags="scroll|enterAlways"
         app:titleTextColor="@color/white"
-        app:title="@string/list_articles" />
+        app:title="@string/list_articles"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/Theme.Newsletter"/>
 
     <FrameLayout
         android:id="@+id/fragment_container"
