@@ -70,7 +70,7 @@
                 <FrameLayout
                     android:id="@+id/fragment_list_editor"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="60dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -103,7 +103,7 @@
                 <FrameLayout
                     android:id="@+id/fragment_list_categories"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="60dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -134,7 +134,7 @@
                 <FrameLayout
                     android:id="@+id/fragment_list_country"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="60dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -146,30 +146,7 @@
             </LinearLayout>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="15dp"
-                android:text="@string/informationsAdd"
-                android:textColor="@color/blue"
-                android:textSize="15dp" />
 
-            <RelativeLayout
-                android:id="@+id/buttonLyt_a_propos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <Button
-                    android:id="@+id/btn_a_propos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/mybutton"
-                    android:text="@string/aPropos"
-                    android:layout_marginBottom="100dp"/>
-
-            </RelativeLayout>
 
 
 

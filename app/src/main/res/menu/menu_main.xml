@@ -6,10 +6,21 @@
     <item
         android:orderInCategory="100"
         android:title="About Us"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:id="@+id/btn_a_propos"/>
+
     <item
+        android:title="Favorite"
+        android:id="@+id/btn_favorite_toolbar"
         android:orderInCategory="200"
         android:icon="@drawable/ic_baseline_favorite_24_white"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:title="Home"
+        android:id="@+id/btn_home_toolbar"
+        android:orderInCategory="200"
+        android:icon="@drawable/ic_baseline_home_white_24"
         app:showAsAction="ifRoom" />
 
 

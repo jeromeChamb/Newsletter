@@ -2,22 +2,25 @@ package com.mbds.newsletter
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.mbds.newsletter.data.fragments.AboutUsFragment
 import com.mbds.newsletter.data.fragments.HomePageFragment
 
 
 class MainActivity : AppCompatActivity(),
     NavigationListener {
     private lateinit var toolbar: Toolbar
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         showFragment(HomePageFragment())
     }
 
@@ -41,7 +44,31 @@ class MainActivity : AppCompatActivity(),
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        menu.findItem(R.id.btn_home_toolbar).isVisible = false
         return super.onCreateOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.btn_a_propos -> {
+                showFragment(AboutUsFragment())
+                updateTitle(R.string.aPropos)
+                true
+            }
+            R.id.btn_favorite_toolbar -> {
+                showFragment(AboutUsFragment())
+                updateTitle(R.string.aPropos)
+                true
+            }
+            R.id.btn_home_toolbar -> {
+                showFragment(HomePageFragment())
+                updateTitle(R.string.home)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
 }

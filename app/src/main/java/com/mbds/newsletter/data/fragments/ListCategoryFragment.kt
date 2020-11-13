@@ -1,19 +1,17 @@
 package com.mbds.newsletter.data.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.adapters.ListCategoryAdapter
-import com.mbds.newsletter.data.adapters.ListCountryAdapter
 
 class ListCategoryFragment : Fragment(){
     private lateinit var recyclerView: RecyclerView
+
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
      */
