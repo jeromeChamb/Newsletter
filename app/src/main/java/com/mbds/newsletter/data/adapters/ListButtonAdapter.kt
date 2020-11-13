@@ -9,13 +9,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
+import com.mbds.newsletter.data.fragments.SourceArticleFragment
 import com.mbds.newsletter.models.Article
 import com.mbds.newsletter.models.ArticleReponse
 import com.mbds.newsletter.models.Editeur
 import com.mbds.newsletter.models.EditeurReponse
 
-class ListButtonAdapter (items : EditeurReponse) : RecyclerView.Adapter<ListButtonAdapter.ViewHolder>(){
+class ListButtonAdapter (items : EditeurReponse , val handler: SourceHandler) : RecyclerView.Adapter<ListButtonAdapter.ViewHolder>(){
     private val mEditeurs: EditeurReponse = items
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View = LayoutInflater.from(parent.context)
@@ -26,6 +28,9 @@ class ListButtonAdapter (items : EditeurReponse) : RecyclerView.Adapter<ListButt
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val editeur: Editeur = mEditeurs.editeur[position]
         holder.mButton.text = editeur.name
+        holder.mButton.setOnClickListener {
+           handler.showSource(editeur.id)
+        }
     }
 
     override fun getItemCount(): Int {
