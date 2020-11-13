@@ -7,8 +7,9 @@ import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Pays
+import java.util.logging.Handler
 
-class ListCategoryAdapter : RecyclerView.Adapter<ListCategoryAdapter.ViewHolder>(){
+class ListCategoryAdapter (val handler: SourceHandler): RecyclerView.Adapter<ListCategoryAdapter.ViewHolder>(){
 
     val listCategory: MutableList<String> = mutableListOf(
         "business",
@@ -29,6 +30,9 @@ class ListCategoryAdapter : RecyclerView.Adapter<ListCategoryAdapter.ViewHolder>
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = listCategory[position]
         holder.mButton.text = category
+        holder.mButton.setOnClickListener {
+            handler.showSource(category)
+        }
     }
 
     override fun getItemCount(): Int {
