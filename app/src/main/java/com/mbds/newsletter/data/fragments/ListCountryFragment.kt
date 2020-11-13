@@ -8,11 +8,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.adapters.ListCountryAdapter
+import com.mbds.newsletter.data.adapters.SourceHandler
 
 
-class ListCountryFragment : Fragment() {
+class ListCountryFragment : Fragment(), SourceHandler {
     private lateinit var recyclerView: RecyclerView
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
@@ -36,8 +38,15 @@ class ListCountryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ListCountryAdapter()
+        val adapter = ListCountryAdapter(this)
         recyclerView.adapter = adapter
+    }
+
+    override fun showSource(source: String) {
+        (activity as? NavigationListener)?.let {
+            it.showFragment(CountryArticlesFragment(source))
+            it.updateTitle(R.string.list_articles)
+        }
     }
 
 

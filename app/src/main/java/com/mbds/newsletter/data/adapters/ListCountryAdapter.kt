@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.R
 import com.mbds.newsletter.models.Pays
 
-class ListCountryAdapter : RecyclerView.Adapter<ListCountryAdapter.ViewHolder>(){
+class ListCountryAdapter (val handler: SourceHandler) : RecyclerView.Adapter<ListCountryAdapter.ViewHolder>(){
 
     val listCountry: MutableList<Pays> = mutableListOf(
         Pays("France","fr"),
@@ -31,6 +31,9 @@ class ListCountryAdapter : RecyclerView.Adapter<ListCountryAdapter.ViewHolder>()
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val country = listCountry[position]
         holder.mButton.text = country.name
+        holder.mButton.setOnClickListener {
+            handler.showSource(country.search)
+        }
     }
 
     override fun getItemCount(): Int {

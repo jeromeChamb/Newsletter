@@ -6,10 +6,13 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
 import com.mbds.newsletter.data.adapters.ListCategoryAdapter
+import com.mbds.newsletter.data.adapters.SourceHandler
 
-class ListCategoryFragment : Fragment(){
+
+class ListCategoryFragment : Fragment(), SourceHandler{
     private lateinit var recyclerView: RecyclerView
 
     /**
@@ -34,8 +37,15 @@ class ListCategoryFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ListCategoryAdapter()
+        val adapter = ListCategoryAdapter(this)
         recyclerView.adapter = adapter
+    }
+
+    override fun showSource(source: String) {
+        (activity as? NavigationListener)?.let {
+            it.showFragment(CategoryArticlesFragment(source))
+            it.updateTitle(R.string.list_articles)
+        }
     }
 
 

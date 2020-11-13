@@ -14,10 +14,10 @@ class SourceRepository {
 
 
     companion object {
-        private var instance: ArticleRepository? = null
-        fun getInstance(): ArticleRepository {
+        private var instance: SourceRepository? = null
+        fun getInstance(): SourceRepository {
             if (instance == null) {
-                instance = ArticleRepository()
+                instance = SourceRepository()
             }
             return instance!!
         }
