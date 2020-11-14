@@ -60,8 +60,6 @@ class MainActivity : AppCompatActivity(),
                 return false
             }
             override fun onQueryTextChange(p0: String?): Boolean {
-                //Start filtering the list as user start entering the characters
-                //adapter.filter.filter(p0)
                 return false
             }
         })
