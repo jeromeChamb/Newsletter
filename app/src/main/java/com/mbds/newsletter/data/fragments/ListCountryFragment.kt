@@ -26,7 +26,7 @@ class ListCountryFragment : Fragment(), SourceHandler {
     ): View? {
         val view = inflater.inflate(R.layout.list_button, container, false)
         recyclerView = view.findViewById(R.id.list_button)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context,RecyclerView.HORIZONTAL, false)
         recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),

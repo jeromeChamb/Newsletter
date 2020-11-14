@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
@@ -31,7 +32,7 @@ class ListEditeurFragment : Fragment(), SourceHandler {
     ): View? {
         val view = inflater.inflate(R.layout.list_button, container, false)
         recyclerView = view.findViewById(R.id.list_button)
-        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.layoutManager = LinearLayoutManager(context,RecyclerView.HORIZONTAL, false)
         recyclerView.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),
