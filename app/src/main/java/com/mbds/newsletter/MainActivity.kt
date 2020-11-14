@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.mbds.newsletter.data.fragments.AboutUsFragment
 import com.mbds.newsletter.data.fragments.HomePageFragment
+import com.mbds.newsletter.data.fragments.ListArticlesFragment
 
 
 class MainActivity : AppCompatActivity(),
@@ -45,6 +47,25 @@ class MainActivity : AppCompatActivity(),
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         menu.findItem(R.id.btn_home_toolbar).isVisible = false
+        val searchItem = menu?.findItem(R.id.action_search)
+        val searchView = searchItem?.actionView as SearchView
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(p0: String?): Boolean {
+                if(p0.isNullOrBlank()){
+                    //afficher un label recherche vide
+                }else{
+                    showFragment(ListArticlesFragment(p0))
+                }
+                return false
+            }
+            override fun onQueryTextChange(p0: String?): Boolean {
+                //Start filtering the list as user start entering the characters
+                //adapter.filter.filter(p0)
+                return false
+            }
+        })
+
         return super.onCreateOptionsMenu(menu)
     }
 
