@@ -21,13 +21,6 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
-
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = FavorisListAdapter()
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-
-
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         showFragment(HomePageFragment())
