@@ -8,6 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.mbds.newsletter.data.fragments.AboutUsFragment
+import com.mbds.newsletter.data.fragments.FavoriteFragment
 import com.mbds.newsletter.data.fragments.HomePageFragment
 import com.mbds.newsletter.data.fragments.ListArticlesFragment
 
@@ -77,8 +78,8 @@ class MainActivity : AppCompatActivity(),
                 true
             }
             R.id.btn_favorite_toolbar -> {
-                showFragment(AboutUsFragment())
-                updateTitle(R.string.aPropos)
+                showFragment(FavoriteFragment())
+                updateTitle(R.string.favorite)
                 true
             }
             R.id.btn_home_toolbar -> {

@@ -4,6 +4,7 @@
     <string name="list_articles">Liste des articles</string>
     <string name="article_details">Article</string>
     <string name="home">Accueil</string>
+    <string name="favorite">Liste des favoris</string>
 
     <!-- articles_item et articles_details -->
     <string name="date">Date</string>

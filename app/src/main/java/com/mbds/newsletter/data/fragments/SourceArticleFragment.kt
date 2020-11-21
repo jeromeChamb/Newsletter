@@ -68,7 +68,7 @@ class SourceArticleFragment (subject: String): Fragment(), ListArticlesHandler {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
-            val adapter = ListArticleAdapter(articles,this@SourceArticleFragment)
+            val adapter = ListArticleAdapter(articles,this@SourceArticleFragment,requireContext())
             recyclerView.adapter = adapter
         }
     }
@@ -77,7 +77,7 @@ class SourceArticleFragment (subject: String): Fragment(), ListArticlesHandler {
         (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.article_details)
         }
-        val adapter = ArticleDetailsAdapter(article,this)
+        val adapter = ArticleDetailsAdapter(requireContext(), article,this)
         recyclerView.adapter = adapter
     }
 

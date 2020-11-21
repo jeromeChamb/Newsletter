@@ -1,5 +1,6 @@
 package com.mbds.newsletter.data.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -7,26 +8,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mbds.newsletter.NavigationListener
 import com.mbds.newsletter.R
-import com.mbds.newsletter.data.ArticleRepository
+import com.mbds.newsletter.data.DB.FavDB
 import com.mbds.newsletter.data.adapters.ArticleDetailsAdapter
+import com.mbds.newsletter.data.adapters.FavoriteAdapter
 import com.mbds.newsletter.data.adapters.ListArticleAdapter
 import com.mbds.newsletter.data.adapters.ListArticlesHandler
 import com.mbds.newsletter.models.Article
 import com.mbds.newsletter.models.ArticleReponse
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import com.mbds.newsletter.models.FavItem
 
-
-class ListArticlesFragment(subject: String): Fragment(), ListArticlesHandler {
+class FavoriteFragment : Fragment(), ListArticlesHandler{
     private lateinit var recyclerView: RecyclerView
-    val subject = subject
-
+    private lateinit var favDB: FavDB
+    private var favoriteList: MutableList<FavItem> = ArrayList<FavItem>()
+   // private lateinit var favAdapter: ListFavArticlesAdapter
     /**
      * Fonction permettant de définir une vue à attacher à un fragment
      */
@@ -44,51 +44,63 @@ class ListArticlesFragment(subject: String): Fragment(), ListArticlesHandler {
                 DividerItemDecoration.VERTICAL
             )
         )
+        favDB = FavDB(activity)
+        loadData(requireContext())
         return view
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getArticles(subject)
-    }
-    /**
-     * Récupère la liste des articles dans un thread secondaire
-     */
-    private fun getArticles(subject: String) {
-        lifecycleScope.launch(Dispatchers.IO) {
-            val articles = ArticleRepository.getInstance().getArticles(subject)
-            bindData(articles)
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.favorite)
         }
     }
 
-    /**
-     * Rempli le recyclerview avec les données récupérées dans le web service
-     * Cette action doit s'effectuer sur le thread principale
-     * Car on ne peut mas modifier les éléments de vue dans un thread secondaire
-     */
-    private fun bindData(articles: ArticleReponse) {
-        lifecycleScope.launch(Dispatchers.Main) {
-            //créer l'adapter
-            //associer l'adapteur au recyclerview
 
-            val adapter = ListArticleAdapter(articles, this@ListArticlesFragment, requireContext())
-            recyclerView.adapter = adapter
+
+
+    private fun loadData(context: Context) {
+        if (favoriteList != null) {
+            favoriteList.clear()
         }
+        val db = favDB.readableDatabase
+        val cursor = favDB.select_all_favorite_list()
+        try {
+            while (cursor.moveToNext()) {
+                val title = cursor.getString(cursor.getColumnIndex(FavDB.ARTICLE_TITLE))
+                val url = cursor.getString(cursor.getColumnIndex(FavDB.ARTICLE_URL))
+                val description = cursor.getString(cursor.getColumnIndex(FavDB.ARTICLE_DESCRIPTION))
+                val author = cursor.getString(cursor.getColumnIndex(FavDB.ARTICLE_AUTHOR))
+                val id = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID))
+                val urlToImage = cursor.getString(cursor.getColumnIndex(FavDB.ARTICLE_IMAGE))
+
+                val favArticle = FavItem(id, title,url, description, author, urlToImage)
+                favoriteList.add(favArticle)
+            }
+        } finally {
+            if (cursor != null && cursor.isClosed) cursor.close()
+            db.close()
+        }
+        val adapter = FavoriteAdapter(requireContext(), this,favoriteList)
+        recyclerView.adapter = adapter
     }
 
     override fun showArticle(article: Article) {
         (activity as? NavigationListener)?.let {
             it.updateTitle(R.string.article_details)
         }
-        val adapter = ArticleDetailsAdapter(requireContext(),article, this)
+        val adapter = ArticleDetailsAdapter(requireContext() ,article, this)
         recyclerView.adapter = adapter
     }
 
     override fun back() {
         (activity as? NavigationListener)?.let {
-            it.updateTitle(R.string.list_articles)
+            it.updateTitle(R.string.favorite)
         }
-        getArticles(subject)
+        val adapter = FavoriteAdapter(requireContext(), this,favoriteList)
+        recyclerView.adapter = adapter
+
     }
 
     override fun showPage(url: String) {
@@ -96,4 +108,5 @@ class ListArticlesFragment(subject: String): Fragment(), ListArticlesHandler {
         val naviguer = Intent(Intent.ACTION_VIEW, chemin)
         startActivity(naviguer)
     }
+
 }

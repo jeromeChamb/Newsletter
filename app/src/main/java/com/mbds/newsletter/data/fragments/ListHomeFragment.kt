@@ -65,7 +65,7 @@ class ListHomeFragment (subject: String) : Fragment(), ListHomeHandler {
         lifecycleScope.launch(Dispatchers.Main) {
             //créer l'adapter
             //associer l'adapteur au recyclerview
-            val adapter = ListHomeAdapter(articles,this@ListHomeFragment)
+            val adapter = ListHomeAdapter(articles,this@ListHomeFragment,requireContext())
             recyclerView.adapter = adapter
         }
     }
