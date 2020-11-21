@@ -28,6 +28,7 @@ class HomePageFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        setHasOptionsMenu(true)
         val view = inflater.inflate(R.layout.home_page, container, false)
         tousArticles = view.findViewById(R.id.text_last_categories)
 
@@ -50,6 +51,11 @@ class HomePageFragment : Fragment(){
                 it.updateTitle(R.string.list_articles)
             }
         }
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.findItem(R.id.btn_home_toolbar).isVisible = false
+        super.onPrepareOptionsMenu(menu)
     }
 
 

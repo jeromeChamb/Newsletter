@@ -12,6 +12,8 @@ class ListCountryAdapter (val handler: SourceHandler) : RecyclerView.Adapter<Lis
 
     val listCountry: MutableList<Pays> = mutableListOf(
         Pays("France","fr"),
+        Pays("Austria","at"),
+        Pays("Brazil","br"),
         Pays("USA","us"),
         Pays("Argentina","ar"),
         Pays("Australia","au"),

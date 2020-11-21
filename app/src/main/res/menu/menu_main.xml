@@ -9,9 +9,16 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView" />
 
     <item
+        android:title="Home"
+        android:id="@+id/btn_home_toolbar"
         android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_home_white_24"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:orderInCategory="200"
         android:title="About Us"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:id="@+id/btn_a_propos"/>
 
     <item
@@ -21,12 +28,7 @@
         android:icon="@drawable/ic_baseline_favorite_24_white"
         app:showAsAction="ifRoom" />
 
-    <item
-        android:title="Home"
-        android:id="@+id/btn_home_toolbar"
-        android:orderInCategory="200"
-        android:icon="@drawable/ic_baseline_home_white_24"
-        app:showAsAction="ifRoom" />
+
 
 
 </menu>
