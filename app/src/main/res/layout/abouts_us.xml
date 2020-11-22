@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="- Librairie 1"
+                android:text="- Retrofit"
                 android:textSize="15dp" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="- Librairie 2"
+                android:text="- SQLiteDatabase"
                 android:textSize="15dp" />
 
             <TextView
@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="- Fonctionnalité 1"
+                android:text="- Sauvegarde en mémoire des articles en favoris"
                 android:textSize="15dp" />
             <TextView
                 android:layout_marginStart="24dp"
@@ -123,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="- Fonctionnalité 2"
+                android:text="- Barre de recherche (meilleur résultat avec des mots en anglais)"
                 android:textSize="15dp" />
             <TextView
                 android:layout_marginStart="24dp"
@@ -131,7 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:text="- Fonctionnalité 3"
+                android:text="- Bouton Home dans la Navbar"
                 android:textSize="15dp" />
 
         </LinearLayout>
